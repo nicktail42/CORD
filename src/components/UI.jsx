@@ -1,0 +1,9 @@
+﻿import { Link } from 'react-router-dom'
+import { ArrowUpRight, Trees, Tractor, Shovel, MapPin, Target, Eye, Gem, ShieldCheck, Users, Settings, Handshake, Send, ArrowRight } from 'lucide-react'
+const icons = { trees: Trees, tractor: Tractor, shovel: Shovel, map: MapPin, target: Target, eye: Eye, gem: Gem, shield: ShieldCheck, users: Users, settings: Settings, handshake: Handshake, send: Send, arrow: ArrowRight }
+export function Icon({ name, ...props }) { const Component = icons[name] || ArrowRight; return <Component aria-hidden="true" {...props} /> }
+export function Button({ to, children, secondary = false }) { return <Link className={`button ${secondary ? 'secondary' : ''}`} to={to}>{children}<ArrowUpRight size={17} /></Link> }
+export function Eyebrow({ children }) { return <div className="eyebrow"><span />{children}</div> }
+export function PageHeading({ label, title, children }) { return <section className="page-heading"><div className="container"><Eyebrow>{label}</Eyebrow><h1>{title}</h1><p>{children}</p></div></section> }
+export function ServiceCard({ service, full = false }) { return <article className="service-card"><img src={service.image} alt={`${service.name} illustrative construction scene`} loading="lazy" /><div className="card-body"><span className="card-icon"><Icon name={service.icon} /></span><h3>{service.name}</h3><p>{service.description}</p><Link className="text-link" to={full ? `/contact?service=${service.id}` : '/services'}>{full ? 'Inquire about this service' : 'Explore service'}<ArrowUpRight size={16} /></Link></div></article> }
+export function CTA() { return <section className="cta"><div className="container cta-inner"><div><Eyebrow>LET’S MOVE YOUR VISION FORWARD</Eyebrow><h2>Great possibilities start<br />with a conversation.</h2><p>Tell us about your land, your plans, and what comes next.</p></div><Button to="/contact">Send an Inquiry</Button></div></section> }

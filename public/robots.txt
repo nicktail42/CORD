@@ -1,0 +1,3 @@
+﻿User-agent: *
+Allow: /
+# Add Sitemap: https://YOUR-VERIFIED-DOMAIN/sitemap.xml after configuring deployment.
