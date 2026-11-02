@@ -1,4 +1,4 @@
-﻿# CORD Mobilizer
+﻿# CORD Mobilizers Philippines Inc.
 
 Responsive, frontend-only business website built inside the existing Vite application. Five pages, a 404 route, a filterable demonstration project gallery with native image dialogs, and an accessible project inquiry form. No backend, database, authentication, or admin dashboard is included.
 
@@ -28,7 +28,7 @@ Commands:
 - `src/components/UI.jsx`: shared buttons, headings, service cards, icons, CTA.
 - `src/components/InquiryForm.jsx`: accessible form, validation feedback, loading/success/error states.
 - `src/pages/Pages.jsx`: five page components and gallery interactions.
-- `src/data/content.js`: editable branding, proposed services, demonstration projects, mission/vision/values.
+- `src/data/content.js`: editable branding, proposed services, demonstration projects, purpose and focus areas.
 - `src/utils/validation.js`: input validation.
 - `src/services/inquiryService.js`: provider-specific submission adapter, isolated from UI.
 - `src/index.css`: Tailwind import, global reset and theme.
@@ -38,7 +38,7 @@ Commands:
 
 ## Content review
 
-All services are illustrative categories pending confirmation. Gallery items are explicitly demonstrations and are not claimed to be completed CORD work. Company overview, mission, vision, and values are editable draft copy. Confirm business contact information, operating area, service availability, privacy wording and business claims before launch. No invented addresses, licenses, customer counts, reviews, or company statistics are included. A map is intentionally deferred until a real address is supplied.
+All services are illustrative categories pending confirmation. Gallery items are explicitly demonstrations and are not claimed to be completed CORD work. The official organization name and purpose are supplied organization information. Service descriptions are proposed wording derived from that purpose. Confirm business contact information, operating area, service availability, privacy wording and business claims before launch. No invented addresses, licenses, customer counts, reviews, or company statistics are included. A map is intentionally deferred until a real address is supplied.
 
 Edit `src/data/content.js` for service IDs/names/descriptions/images/icons, project categories and copy, and values. Update page prose in `src/pages/Pages.jsx`. Update navigation/footer in `src/components/Layout.jsx`. The supplied tagline is retained.
 
@@ -46,22 +46,15 @@ Edit `src/data/content.js` for service IDs/names/descriptions/images/icons, proj
 
 Official image: `public/logo/CORD Housing Mobilization Logo.png`. It is displayed in its original aspect ratio beside a compact text wordmark. The original logo includes a checkerboard-looking background; supply a clean transparent export if desired. Do not stretch it or change its artwork. `public/cord-icon.svg` is a simple C monogram favicon, not a replacement official logo.
 
-Replace the following local placeholders, keeping filenames or updating references in `src/data/content.js` and page/CSS references:
+Community visuals are local SVG concept illustrations, not photographs of CORD activities, employees, beneficiaries, or completed work. All active image references are centralized in `src/data/content.js` (including the hero). Replace these references with approved photographs when supplied:
 
-| Asset | Location | References |
-| --- | --- | --- |
-| Excavator hero | `public/images/hero/excavator.jpg` | `src/App.css`, services/projects data, Contact |
-| Company/site | `public/images/company/site.jpg` | About, services data |
-| Construction/clearing | `public/images/services/clearing.jpg` | services/projects data |
-| Open land | `public/images/projects/land.jpg` | services/projects data |
+| Asset | Location |
+| --- | --- |
+| Residential neighborhood | `public/images/community/neighborhood.svg` |
+| Community meeting | `public/images/community/meeting.svg` |
+| Leadership learning | `public/images/community/leadership.svg` |
 
-Temporary stock photography is downloaded from Unsplash. Source image URLs:
-- https://images.unsplash.com/photo-1580901368919-7738efb0f87e
-- https://images.unsplash.com/photo-1504307651254-35680f356dfd
-- https://images.unsplash.com/photo-1541888946425-d81bb19240f5
-- https://images.unsplash.com/photo-1500382017468-9049fed747ef
-
-Use genuine company photos and accurate alt text at launch. Use optimized JPEG/WebP files at appropriate widths (roughly 1920px hero, 1000px other images). All images are local at runtime; below-fold images load lazily. The original supplied logo is comparatively large and should eventually be replaced with an optimized official export.
+Previous construction photographs remain unused in the asset folder. The official logo and tagline are unchanged. Confirm contact details, service availability, operating area, and authentic project information with the client.
 
 ## Formspree setup
 

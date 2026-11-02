@@ -1,17 +1,25 @@
-﻿export const company = { name: 'CORD Mobilizer', tagline: 'Connecting Homes. Building Futures.', logo: '/logo/CORD Housing Mobilization Logo.png' }
+export const company = {
+  name: 'CORD Mobilizers Philippines Inc.',
+  tagline: 'Connecting Homes. Building Futures.',
+  logo: '/logo/CORD Housing Mobilization Logo.png',
+  purpose: 'To be of aid in providing housing for the Informal Settler Families (ISF) by being a Community Organizer, CMP Mobilizer (Social Housing Finance Corporation), and Leadership Formator.',
+  summary: 'CORD Mobilizers Philippines Inc. supports Informal Settler Families through community organizing, housing mobilization, Community Mortgage Program coordination, and leadership formation.',
+}
+// Concept illustrations only. Replace with approved CORD photography here.
+export const images = { neighborhood: '/images/community/neighborhood.svg', meeting: '/images/community/meeting.svg', leadership: '/images/community/leadership.svg' }
 export const services = [
-  { id: 'land-clearing', name: 'Land Clearing', icon: 'trees', image: '/images/services/clearing.jpg', description: 'Make room for what comes next. Removal of vegetation, debris, and site obstacles to prepare your land for development.' },
-  { id: 'site-preparation', name: 'Site Preparation', icon: 'tractor', image: '/images/company/site.jpg', description: 'A strong start for your project. Grading and leveling to create a practical foundation for construction.' },
-  { id: 'earthmoving', name: 'Earthmoving', icon: 'shovel', image: '/images/hero/excavator.jpg', description: 'Shape the land around your plans with excavation, hauling, and land filling support.' },
-  { id: 'land-development', name: 'Land Development', icon: 'map', image: '/images/projects/land.jpg', description: 'Bring your vision closer to reality with land mobilization support for residential, commercial, and industrial sites.' },
+  { id: 'community-organizing', name: 'Community Organizing', icon: 'users', image: images.meeting, description: 'Supporting community coordination, participation, and organization.' },
+  { id: 'cmp-mobilization', name: 'CMP Mobilization', icon: 'handshake', image: images.neighborhood, description: 'Assisting communities with coordination and mobilization related to the Community Mortgage Program (CMP).' },
+  { id: 'housing-assistance', name: 'Housing Assistance and Coordination', icon: 'map', image: images.neighborhood, description: 'Supporting eligible communities in navigating relevant housing processes and requirements, including housing initiatives associated with the Social Housing Finance Corporation (SHFC).' },
+  { id: 'leadership-formation', name: 'Leadership Formation', icon: 'target', image: images.leadership, description: 'Encouraging community leadership, participation, and organizational development.' },
 ]
 export const projects = [
-  { id: 'residential', title: 'Room for a new beginning', category: 'Site Preparation', image: '/images/projects/land.jpg', description: 'Illustrative residential site preparation, showing the kind of land transformation a project may require.' },
-  { id: 'earthworks', title: 'Shaping the possibilities', category: 'Earthmoving', image: '/images/hero/excavator.jpg', description: 'An example of excavation and earthworks. Scope, location, and project details are placeholders.' },
-  { id: 'clearing', title: 'A clear path forward', category: 'Land Clearing', image: '/images/services/clearing.jpg', description: 'A demonstration of land clearing imagery. This is not a verified CORD project.' },
+  { id: 'community', title: 'A place to come together', category: 'Community Organizing', image: images.meeting, description: 'A concept illustration of community participation and discussion. This does not depict an actual CORD activity.' },
+  { id: 'housing', title: 'Housing opportunities, shared hopes', category: 'Housing Coordination', image: images.neighborhood, description: 'An illustrative neighborhood representing housing opportunities. This is not a verified CORD housing project.' },
+  { id: 'leadership', title: 'Growing community voices', category: 'Leadership Formation', image: images.leadership, description: 'A concept illustration of learning and leadership development. This does not depict CORD staff or beneficiaries.' },
 ]
 export const values = [
-  { title: 'Our Mission', icon: 'target', text: 'To support thoughtful development through safe, practical, and dependable land preparation.' },
-  { title: 'Our Vision', icon: 'eye', text: 'To become a trusted partner in preparing land and building stronger communities.' },
-  { title: 'Our Values', icon: 'gem', text: 'Integrity in every conversation. Care for every site. Commitment to your vision.' },
+  { title: 'Community Organizing', icon: 'users', text: 'Community participation and coordination in support of housing opportunities.' },
+  { title: 'CMP Mobilization', icon: 'handshake', text: 'Community Mortgage Program coordination in support of housing opportunities.' },
+  { title: 'Leadership Formation', icon: 'target', text: 'Community leadership and organizational development.' },
 ]
