@@ -1,4 +1,4 @@
-﻿# CORD Mobilizers Philippines Inc.
+﻿# CORD Community Organizer
 
 Responsive, frontend-only business website built inside the existing Vite application. Five pages, a 404 route, a filterable demonstration project gallery with native image dialogs, and an accessible project inquiry form. No backend, database, authentication, or admin dashboard is included.
 
@@ -43,6 +43,8 @@ All services are illustrative categories pending confirmation. Gallery items are
 Edit `src/data/content.js` for service IDs/names/descriptions/images/icons, project categories and copy, and values. Update page prose in `src/pages/Pages.jsx`. Update navigation/footer in `src/components/Layout.jsx`. The supplied tagline is retained.
 
 ## Images and branding
+
+Public-facing branding is **CORD Community Organizer** (`company.name`). The supplied official name, **CORD Mobilizers Philippines Inc.**, remains in `company.legalName`, the organizational purpose attribution, and the footer/copyright. Changing that official name requires client confirmation. Technical terms **CMP Mobilizer** and **CMP Mobilization**, service IDs, the repository/package name, and the supplied logo filename remain unchanged.
 
 Official image: `public/logo/CORD Housing Mobilization Logo.png`. It is displayed in its original aspect ratio beside a compact text wordmark. The original logo includes a checkerboard-looking background; supply a clean transparent export if desired. Do not stretch it or change its artwork. `public/cord-icon.svg` is a simple C monogram favicon, not a replacement official logo.
 

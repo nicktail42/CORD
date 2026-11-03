@@ -1,14 +1,15 @@
 export const company = {
-  name: 'CORD Mobilizers Philippines Inc.',
+  name: 'CORD Community Organizer',
+  legalName: 'CORD Mobilizers Philippines Inc.',
   tagline: 'Connecting Homes. Building Futures.',
   logo: '/logo/CORD Housing Mobilization Logo.png',
   purpose: 'To be of aid in providing housing for the Informal Settler Families (ISF) by being a Community Organizer, CMP Mobilizer (Social Housing Finance Corporation), and Leadership Formator.',
-  summary: 'CORD Mobilizers Philippines Inc. supports Informal Settler Families through community organizing, housing mobilization, Community Mortgage Program coordination, and leadership formation.',
+  summary: 'CORD Community Organizer supports Informal Settler Families (ISFs) through community organizing, housing assistance, Community Mortgage Program (CMP) coordination, community development, and leadership formation.',
 }
 // Concept illustrations only. Replace with approved CORD photography here.
 export const images = { neighborhood: '/images/community/neighborhood.svg', meeting: '/images/community/meeting.svg', leadership: '/images/community/leadership.svg' }
 export const services = [
-  { id: 'community-organizing', name: 'Community Organizing', icon: 'users', image: images.meeting, description: 'Supporting community coordination, participation, and organization.' },
+  { id: 'community-organizing', name: 'Community Organizing', icon: 'users', image: images.meeting, description: 'Supporting community coordination, participation, and organization for community development.' },
   { id: 'cmp-mobilization', name: 'CMP Mobilization', icon: 'handshake', image: images.neighborhood, description: 'Assisting communities with coordination and mobilization related to the Community Mortgage Program (CMP).' },
   { id: 'housing-assistance', name: 'Housing Assistance and Coordination', icon: 'map', image: images.neighborhood, description: 'Supporting eligible communities in navigating relevant housing processes and requirements, including housing initiatives associated with the Social Housing Finance Corporation (SHFC).' },
   { id: 'leadership-formation', name: 'Leadership Formation', icon: 'target', image: images.leadership, description: 'Encouraging community leadership, participation, and organizational development.' },

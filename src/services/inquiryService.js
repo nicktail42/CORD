@@ -8,7 +8,7 @@ export async function submitInquiry(data, options = {}) {
   try {
     const response = await (options.fetcher || fetch)(`https://formspree.io/f/${id}`, {
       method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, signal: controller.signal,
-      body: JSON.stringify({ ...data, _subject: 'CORD Mobilizer — New project inquiry' }),
+      body: JSON.stringify({ ...data, _subject: 'CORD Community Organizer — New project inquiry' }),
     })
     const result = await response.json().catch(() => null)
     if (!response.ok || result?.ok !== true) throw new Error('Your inquiry could not be confirmed. Please try again. Your details are still here.')

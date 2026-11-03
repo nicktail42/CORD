@@ -19,7 +19,7 @@ test('all routes, images, metadata and responsive widths', async ({ page }) => {
     for (const path of ['/', '/about', '/services', '/projects', '/contact', '/missing']) {
       await page.goto(path)
       await expect(page.locator('main h1')).toBeVisible()
-      await expect(page).toHaveTitle(/CORD Mobilizer/)
+      await expect(page).toHaveTitle(/CORD Community Organizer/)
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
       await page.locator('img').evaluateAll(images => images.forEach(img => { img.loading = 'eager' }))
       await expect.poll(() => page.locator('img').evaluateAll(images => images.every(img => img.complete && img.naturalWidth > 0))).toBe(true)
@@ -28,7 +28,7 @@ test('all routes, images, metadata and responsive widths', async ({ page }) => {
   expect(errors).toEqual([])
 })
 test('mobile menu, service preselection and validation', async ({ page }) => {
-  await page.route('**/src/services/inquiryService.js', async route => {
+  await page.route('**/src/services/inquiryService.js*', async route => {
     const response = await route.fetch()
     const source = await response.text()
     await route.fulfill({ response, body: source.replace(/export const formId = .*?(?=\r?\n)/, "export const formId = ''") })
@@ -73,7 +73,7 @@ test('provider adapter rejects failures and confirms success', async ({ page }) 
 })
 test('form loading, duplicate prevention and success using a mocked adapter', async ({ page }) => {
   let count = 0
-  await page.route('**/src/services/inquiryService.js', route => route.fulfill({ contentType: 'application/javascript', body: `export const isInquiryConfigured=true; export async function submitInquiry(data){const r=await fetch('/mock-inquiry',{method:'POST',body:JSON.stringify(data)});if(!r.ok)throw new Error('Test submission failed');return r.json()}` }))
+  await page.route('**/src/services/inquiryService.js*', route => route.fulfill({ contentType: 'application/javascript', body: `export const isInquiryConfigured=true; export async function submitInquiry(data){const r=await fetch('/mock-inquiry',{method:'POST',body:JSON.stringify(data)});if(!r.ok)throw new Error('Test submission failed');return r.json()}` }))
   await page.route('**/mock-inquiry', async route => { count++; await new Promise(resolve => setTimeout(resolve, 700)); await route.fulfill({ json: { ok: true } }) })
   await page.goto('/contact')
   await fillInquiry(page)
@@ -85,7 +85,7 @@ test('form loading, duplicate prevention and success using a mocked adapter', as
   expect(count).toBe(1)
 })
 test('form retains details when configured provider fails', async ({ page }) => {
-  await page.route('**/src/services/inquiryService.js', route => route.fulfill({ contentType: 'application/javascript', body: `export const isInquiryConfigured=true; export async function submitInquiry(){throw new Error('Test provider failure')}` }))
+  await page.route('**/src/services/inquiryService.js*', route => route.fulfill({ contentType: 'application/javascript', body: `export const isInquiryConfigured=true; export async function submitInquiry(){throw new Error('Test provider failure')}` }))
   await page.goto('/contact')
   await fillInquiry(page)
   await page.getByRole('button', { name: 'Send Inquiry', exact: true }).click()
@@ -110,7 +110,7 @@ test('official purpose is exact and its layout stacks on mobile', async ({ page 
 })
 
 test('all inquiry selections reach the unchanged Formspree adapter', async ({ page }) => {
-  await page.route('**/src/services/inquiryService.js', async route => {
+  await page.route('**/src/services/inquiryService.js*', async route => {
     const response = await route.fetch()
     const source = await response.text()
     await route.fulfill({ response, body: source.replace(/export const formId = .*?(?=\r?\n)/, "export const formId = 'test'") })
